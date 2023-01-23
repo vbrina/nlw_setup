@@ -11,7 +11,7 @@ const availableWeekDays = [
   "Quinta-feira",
   "Sexta-feira",
   "Sábado",
-];
+]; // TODO --> Move this to the DB through a route. 
 
 export const NewHabitForm: React.FC = () => {
   const [title, setTitle] = useState<string>("");
@@ -56,7 +56,7 @@ export const NewHabitForm: React.FC = () => {
         type="text"
         id="title"
         placeholder="Exercícios, dormir bem etc..."
-        className="p-4 rounded-lg mt-3 bg-zinc-800 text-white placeholder:text-zinc-400"
+        className="p-4 rounded-lg mt-3 bg-zinc-800 text-white placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-offset-2 focus:ring-offset-zinc-900"
         onChange={(event) => setTitle(event.target.value)}
         value={title}
       />
@@ -68,11 +68,11 @@ export const NewHabitForm: React.FC = () => {
           return (
             <Checkbox.Root
               key={weekDay}
-              className="flex items-center gap-3 group"
+              className="flex items-center gap-3 group focus:outline-none"
               onCheckedChange={() => handleToggleWeekDay(index)}
               checked={weekDays.includes(index)}
             >
-              <div className="h-8 w-8 rounded-lg flex items-center justify-center bg-zinc-900 border-2 border-zinc-800 group-data-[state=checked]:bg-green-500 group-data-[state=checked]:border-green-500">
+              <div className="h-8 w-8 rounded-lg flex items-center justify-center bg-zinc-900 border-2 border-zinc-800 group-data-[state=checked]:bg-green-500 group-data-[state=checked]:border-green-500 transition-colors group-focus:ring-2 group-focus:ring-violet-600 group-focus:ring-offset-2 group-focus:ring-offset-background">
                 <Checkbox.Indicator>
                   <Check size={20} className="text-white" />
                 </Checkbox.Indicator>
@@ -84,7 +84,7 @@ export const NewHabitForm: React.FC = () => {
       </div>
       <button
         type="submit"
-        className="mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-green-600 hover:bg-green-500"
+        className="mt-6 rounded-lg p-4 flex items-center justify-center gap-3 font-semibold bg-green-600 hover:bg-green-500 transition-colors focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-zinc-900"
       >
         <Check size={20} weight="bold" />
         Confirmar
