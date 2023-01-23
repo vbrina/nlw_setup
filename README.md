@@ -1,4 +1,4 @@
-# nlw_setup
+# Habits - nlw_setup
 
 This project has been created during the NLW by Rocketseat.
 
